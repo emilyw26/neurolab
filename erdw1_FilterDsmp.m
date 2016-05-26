@@ -9,7 +9,7 @@
 
 excluded = [1, 4, 10, 12, 13, 14, 15, 16, 17, 43, 50, 54, 62];
 
-for n=18:63
+for n=14:63
     if sum(find(n==excluded))==0
         fprintf('\n**************************************************\n');
         string = strcat('Processing subject ', int2str(n), '.\n');
@@ -20,7 +20,9 @@ for n=18:63
         EEG = eeg_checkset( EEG );
         EEG= pop_chanedit(EEG, 'load',{'C:\\Users\\RA\\Documents\\MATLAB\\eeglab13_5_4b\\sample_locs\\GSN-Hydrocel-64 1.0.sfp' 'filetype' 'autodetect'});
         EEG = eeg_checkset( EEG );
-        EEG = pop_eegfiltnew(EEG, 1, 40, 3300, 0, [], 0);
+        EEG = pop_eegfiltnew(EEG, 30, 0.5, 6600, 0, [], 0);
+        % EEG = pop_eegfiltnew(EEG, 30, 0.1, 33000, 0, [], 0);
+        % EEG = pop_eegfiltnew(EEG, 30, 1, 3300, 0, [], 0);
         EEG.setname= strcat('erdw1_s%d_filtered', n);
         EEG = eeg_checkset( EEG );
         EEG = pop_resample( EEG, 256);

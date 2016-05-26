@@ -6,7 +6,7 @@
 
 indices = [];
 
-% Finds the indices of each fix2 event
+% Finds the indices of each event 
 for i=1:length(EEG.event);
     check = {EEG.event(i).type};
     % change the event names in the strcmp methods to the specific one you
@@ -18,3 +18,8 @@ end
 
 EEG.event(indices) = []; %removes these elements
 
+% save file
+subprompt = 'Which subject? ';
+subnum = int2str(input(subprompt));
+filename = strcat('erdw1_s', subnum, '_filtered_dsmp_ica_pruned_reref_epochs.set'); 
+EEG = pop_saveset( EEG, 'filename',filename,'filepath','C:\\Users\\RA\\Documents\\MATLAB\\eeglab13_5_4b\\erdw1\\06_Segmented-ArtRemoval\\');

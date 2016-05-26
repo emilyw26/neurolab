@@ -20,6 +20,3 @@ This file performs ICA on several datasets.
 ### erdw1_RemoveEvents.m:
 This file removes any of the events in the data that are not relevant to your data analysis. This is optional.
 - Modify the strings in line 14 as you see fit. If you want to add more events that will be removed, add additional   "| strcmp(event_name, check)"s. If you do not want as many, delete these. 
-
-### erdw1_Detrend.m:
-This file removes any remaining linear drift. Nothing needs to be modified.
