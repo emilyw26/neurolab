@@ -6,7 +6,7 @@
 
 excluded = [1, 2, 3, 5, 10, 12, 13, 15, 16, 17, 21, 27, 29, 42, 43, 46, 47, 48, 49, 50, 54, 62, 64];
 
-for subnum=37:64;
+for subnum=1:64;
     if sum(find(subnum==excluded))==0 
         fprintf('\n**************************************************\n');
         string = strcat('Processing subject ', int2str(subnum), '.\n');
