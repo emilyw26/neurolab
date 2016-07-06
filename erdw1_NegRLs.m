@@ -1,5 +1,5 @@
 % This program converts epoched, Neg RL EEGLAB files into ERPLAB sets
-% for statistical extraction using ERLAB.
+% for statistical extraction using ERPLAB.
 %
 % Author: Emily Wu
 % Date: June 10, 2016
